@@ -1,0 +1,77 @@
+// =============================================================
+// EXPERIENCE / EDUCATION TIMELINE
+// The old markup pointed each entry at a missing bag.png or
+// book.png icon file. Both are replaced with a Font Awesome
+// icon inside the same circular badge — same visual weight,
+// no missing-asset risk.
+// =============================================================
+@use '../abstracts' as *;
+
+.exp-icn {
+  @include circle-badge(56px, $color-primary);
+  border: solid 5px rgba(159, 115, 78, 0.5);
+  box-shadow: 0px 0px 9px 5px rgba(0, 0, 0, 0.34) inset;
+  position: relative;
+  z-index: 1;
+  font-size: 1.3rem;
+  color: $color-white;
+
+  @include respond(tablet-down) {
+    z-index: 999 !important;
+  }
+  @include respond(small-desktop) {
+    z-index: 999 !important;
+  }
+}
+
+span.designation {
+  font-size: 25px;
+  color: $color-white;
+  font-weight: 600;
+
+  @include respond(tablet-down) {
+    font-size: 18px;
+  }
+  @include respond(small-desktop) {
+    font-size: 21px;
+  }
+}
+
+span.compnyExp {
+  color: $color-gray-300;
+  margin-left: 4px;
+}
+
+p.exp-time {
+  color: $color-gray-300;
+}
+
+.tabBar-line {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background: $color-primary;
+    height: 80px;
+    width: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -89px;
+  }
+
+  @include respond(tablet-down) {
+    &::before {
+      height: 85px;
+      bottom: -98px;
+    }
+  }
+}
+
+.experience-tab-main {
+  @include respond(tablet-down) {
+    ul {
+      padding-left: 2px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+// =============================================================
+// SKILL ICON STRIP
+// The row of tech logos (CSS3, HTML5, Sass, Bootstrap, React,
+// GitHub) sitting just under the hero.
+// =============================================================
+@use '../abstracts' as *;
+
+.shown-skill-icon {
+  i {
+    font-size: 5rem;
+    padding: 14px 0;
+    color: $color-gray-500;
+    transition: color $transition-base, transform $transition-base;
+
+    &:hover {
+      color: $color-white;
+      transform: scale(1.15) translateY(-4px);
+      cursor: pointer;
+    }
+  }
+
+  @include respond(tablet-down) {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}

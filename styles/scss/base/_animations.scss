@@ -1,0 +1,147 @@
+// =============================================================
+// KEYFRAME ANIMATIONS
+// =============================================================
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Skill progress bar fills — one keyframe per skill so each can
+// stop at a different final width (paired with the
+// progress-fill() mixin in _mixins.scss).
+@keyframes loadhtml {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 95%;
+  }
+}
+@keyframes loadcss {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 90%;
+  }
+}
+@keyframes loadjs {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 85%;
+  }
+}
+@keyframes loadbs {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 90%;
+  }
+}
+@keyframes loadreact {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 75%;
+  }
+}
+@keyframes loadgit {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 85%;
+  }
+}
+
+@keyframes underline {
+  0% {
+    transform: translateX(-100%);
+    width: 0%;
+    background-color: #fff;
+  }
+  100% {
+    background-color: #9f734e;
+    transform: translateX(0);
+    width: 100%;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+// New — gentle ambient drift for the hero glow blob.
+@keyframes blobDrift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(2%, -3%) scale(1.05);
+  }
+  66% {
+    transform: translate(-2%, 2%) scale(0.97);
+  }
+}
+
+// New — soft entrance for elements not covered by AOS.
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// New — blinking caret next to the typed hero role text.
+@keyframes caretBlink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+// New — subtle diagonal shimmer for image placeholders that are
+// standing in until real photography/screenshots are added.
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+// New — quiet pulse for the preloader monogram.
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(159, 115, 78, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(159, 115, 78, 0);
+  }
+}

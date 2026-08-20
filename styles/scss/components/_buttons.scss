@@ -1,0 +1,71 @@
+// =============================================================
+// BUTTONS
+// =============================================================
+@use '../abstracts' as *;
+
+a.DownloadCV-btn {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: $color-white;
+  font-weight: 500;
+  padding: 14px 24px;
+  border-radius: $radius-sm;
+  background: $color-primary-muted;
+  margin-top: 1rem;
+  transition: box-shadow $transition-slow, transform $transition-base, padding $transition-slow;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  i {
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: width $transition-base, opacity $transition-base;
+  }
+
+  &:hover {
+    box-shadow: none;
+    transform: translateY(-2px);
+    background: $color-primary;
+
+    i {
+      width: 1em;
+      opacity: 1;
+      padding-right: 10px;
+    }
+  }
+}
+
+a.see-work-btn {
+  display: inline-block;
+  border: solid 1px $color-primary-light;
+  color: $color-primary-light;
+  text-decoration: none;
+  padding: 13px 24px;
+  border-radius: $radius-sm;
+  transition: background-color $transition-base, color $transition-base, transform $transition-base;
+
+  &:hover {
+    background: $color-primary-light;
+    color: $color-white;
+    transform: translateY(-2px);
+  }
+}
+
+.frm-sbmit-btn {
+  background: $color-primary;
+  color: $color-white;
+  position: relative;
+  padding: 10px 20px;
+  margin-right: 1rem;
+  font-size: 18px;
+  border: none;
+  min-width: 120px;
+  border-radius: 50px;
+  transition: background-color $transition-base, transform $transition-base;
+
+  &:hover {
+    background: $color-primary-light;
+    transform: translateY(-2px);
+  }
+}

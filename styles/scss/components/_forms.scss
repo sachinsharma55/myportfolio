@@ -1,0 +1,76 @@
+// =============================================================
+// "LET'S WORK TOGETHER" CONTACT FORM
+// =============================================================
+@use '../abstracts' as *;
+
+// Stood in for a missing emp.png illustration — a soft radial
+// glow keeps the column from feeling empty on wide screens.
+.work_with_img {
+  height: 100%;
+  min-height: 260px;
+  border-radius: $radius-lg;
+  background: radial-gradient(circle at 50% 40%, rgba(159, 115, 78, 0.35), rgba(0, 0, 0, 0) 70%);
+
+  @include respond(mobile) {
+    display: none;
+  }
+}
+
+.let_work_form {
+  width: 80%;
+  padding-left: 2rem;
+
+  input,
+  textarea {
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    padding: 16px;
+    margin-bottom: 1.7rem;
+    border: solid 2px rgba(255, 255, 255, 0.35);
+    color: $color-white;
+    background: rgba(255, 255, 255, 0.03);
+    outline: 0;
+    border-radius: $radius-sm;
+    transition: background-color $transition-base, border-color $transition-base, color $transition-base;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    &:focus {
+      background-color: $color-white;
+      color: $color-black;
+      border-color: $color-primary;
+    }
+  }
+
+  @include respond(small-desktop) {
+    width: 90%;
+    input,
+    textarea {
+      font-size: 18px;
+      padding: 8px;
+      margin-bottom: 1.4rem;
+    }
+  }
+
+  @include respond(tablet-down) {
+    width: 100%;
+    padding-left: 0;
+    text-align: center;
+
+    input,
+    textarea {
+      font-size: 16px;
+      padding: 9px;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.workWM textarea {
+  @include respond(small-desktop) {
+    height: 104px;
+  }
+}

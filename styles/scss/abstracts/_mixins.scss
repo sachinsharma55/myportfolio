@@ -1,0 +1,122 @@
+// =============================================================
+// MIXINS
+// Reusable patterns. The old stylesheet repeated the same 30+
+// line block six times for the progress bars and pasted whole
+// media-query sections twice — these mixins are how we stop
+// that from happening again.
+// =============================================================
+
+@use 'variables' as v;
+
+// ---- Responsive breakpoints ----------------------------------------
+// Usage: @include respond(mobile) { ... }
+@mixin respond($breakpoint) {
+  @if $breakpoint == mobile {
+    @media screen and (max-width: v.$bp-mobile-max) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (min-width: v.$bp-tablet-min) and (max-width: v.$bp-tablet-max) {
+      @content;
+    }
+  } @else if $breakpoint == small-desktop {
+    @media (min-width: v.$bp-desktop-sm-min) and (max-width: v.$bp-desktop-sm-max) {
+      @content;
+    }
+  } @else if $breakpoint == tablet-down {
+    @media screen and (max-width: v.$bp-tablet-max) {
+      @content;
+    }
+  }
+}
+
+// ---- Flex helpers ----------------------------------------
+@mixin flex($justify: flex-start, $align: stretch, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+// ---- Skill progress bar track + fill ----------------------------------------
+// Collapses six duplicated 15-line blocks into two mixin calls per skill.
+@mixin progress-track {
+  background: v.$color-gray-700;
+  box-shadow: v.$shadow-inset-track;
+  border-radius: v.$radius-pill;
+  @include flex(flex-start, center);
+  position: relative;
+  padding: 0 5px;
+  margin-bottom: 4rem;
+  height: 30px;
+  width: 500px;
+
+  @include respond(tablet) {
+    width: 100%;
+  }
+  @include respond(small-desktop) {
+    height: 27px;
+    width: 380px;
+  }
+  @include respond(mobile) {
+    width: 100%;
+  }
+}
+
+@mixin progress-fill($animation-name) {
+  animation: #{$animation-name} 2.4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  background: linear-gradient(90deg, v.$color-primary-dark, v.$color-primary);
+  box-shadow: 2px 0px 8px -1px rgba(0, 0, 0, 0.25), 0px 0px 12px 3px rgba(0, 0, 0, 0.32) inset;
+  border-radius: v.$radius-pill;
+  height: 20px;
+  width: 0;
+}
+
+// ---- Decorative floating chip (year-sticker / post-sticker) ----------------------------------------
+@mixin floating-chip {
+  border-radius: v.$radius-sm;
+  background: v.$gradient-sticker;
+  box-shadow: 0px 4px 5px 2px rgba(0, 0, 0, 0.25);
+  width: fit-content;
+  padding: 9px 15px;
+  color: v.$color-primary-dark;
+  font-weight: 800;
+  position: absolute;
+  font-size: 18px;
+  animation: float 3s infinite ease-in-out;
+
+  @include respond(mobile) {
+    font-size: 15px;
+  }
+}
+
+// ---- Card lift on hover — used across skill cards, portfolio cards, buttons ----------------------------------------
+@mixin hover-lift($scale: 1.03, $shadow: v.$shadow-soft) {
+  transition: transform v.$transition-base, box-shadow v.$transition-base;
+  &:hover {
+    transform: translateY(-4px) scale($scale);
+    box-shadow: $shadow;
+  }
+}
+
+// ---- Circular icon badge (footer social, timeline icons) ----------------------------------------
+@mixin circle-badge($size: 55px, $bg: v.$color-primary) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background: $bg;
+  @include flex(center, center);
+}
+
+// ---- Visually-hidden but accessible to screen readers ----------------------------------------
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

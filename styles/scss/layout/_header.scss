@@ -1,0 +1,143 @@
+// =============================================================
+// HERO HEADER
+// The original relied on two missing background images
+// (Rectangle164.png behind the whole header, bgCircle.png
+// behind the portrait). Both are replaced with a pure-CSS
+// gradient glow so the hero still looks intentional even
+// before real photography is dropped back in.
+// =============================================================
+@use '../abstracts' as *;
+
+header {
+  position: relative;
+  overflow: hidden;
+  background-color: $color-black;
+
+  // Ambient glow standing in for Rectangle164.png.
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: $gradient-hero-glow;
+    animation: blobDrift 14s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  > .container,
+  section {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.head-content-about {
+  p:first-child {
+    font-size: 20px;
+    margin-bottom: 0;
+    color: $color-primary-light;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+}
+
+.inner-header-content {
+  h1 {
+    // Fluid instead of three fixed breakpoints (the old file
+    // actually rendered this *smaller* on tablet than on mobile —
+    // clamp() removes that inconsistency entirely).
+    font-size: clamp(2rem, 4.5vw + 1rem, 3.125rem);
+    line-height: 1.25;
+
+    span b {
+      color: $color-primary;
+    }
+  }
+
+  p {
+    font-size: clamp(0.95rem, 1vw + 0.7rem, 1.0625rem);
+    padding-bottom: 2rem;
+    line-height: 1.5;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.85);
+  }
+}
+
+// Blinking caret after the JS-typed role text ("Frontend Developer.", etc.)
+.animatedText::after {
+  content: '|';
+  margin-left: 3px;
+  color: $color-primary-light;
+  animation: caretBlink 0.9s step-end infinite;
+}
+
+// Portrait frame — was a background-image (bgCircle.png) behind
+// a personal photo. Now a self-contained gradient ring so the
+// layout holds even without images/sachin.png in place.
+.head-main-image {
+  position: relative;
+  width: 350px;
+  margin-left: 40px;
+
+  &__frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background: conic-gradient(from 180deg, $color-primary-dark, $color-primary, $color-primary-light, $color-primary-dark);
+    padding: 6px;
+    animation: blobDrift 10s ease-in-out infinite;
+
+    img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+    }
+
+    // Shown only while the frame has no <img> child yet — swap in
+    // a real photo (see the HTML comment) and this disappears on
+    // its own, no CSS changes needed.
+    &:empty::before {
+      content: 'SS';
+      position: absolute;
+      inset: 6px;
+      border-radius: 50%;
+      background: $color-off-black;
+      color: $color-primary-light;
+      font-family: $font-display;
+      font-size: 4rem;
+      @include flex(center, center);
+    }
+  }
+
+  @include respond(mobile) {
+    width: 240px;
+    margin: 0 auto;
+  }
+}
+
+.year-sticker {
+  @include floating-chip;
+  top: 8%;
+  right: 6%;
+}
+
+.post-sticker {
+  @include floating-chip;
+  bottom: 10%;
+  left: 8%;
+  animation-delay: 1.2s;
+}
+
+@include respond(tablet-down) {
+  .year-sticker {
+    top: 4%;
+    right: 3%;
+  }
+  .post-sticker {
+    left: 4%;
+  }
+}

@@ -1,0 +1,108 @@
+// =============================================================
+// PROJECT / PORTFOLIO CARDS
+// Hover-reveal info panel over each project screenshot.
+// =============================================================
+@use '../abstracts' as *;
+
+.portfolio-wrap {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+  position: relative;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  overflow: hidden;
+  height: 220px;
+  transition: transform $transition-base;
+
+  &:hover {
+    transform: translateY(-3px);
+
+    .portfolio-info {
+      background-color: rgba(255, 70, 41, 0.8);
+
+      &::after,
+      &::before {
+        transform: scale(1);
+      }
+      h5,
+      span {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+    }
+  }
+}
+
+.portfolio-img {
+  height: 100%;
+  background: linear-gradient(135deg, $color-off-black 0%, #2d2d2d 50%, $color-off-black 100%);
+  background-size: 200% 100%;
+  animation: shimmer 6s linear infinite;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    // If a project screenshot fails to load (or hasn't been
+    // added back yet — see images/projects/README in this repo),
+    // fall back to the animated gradient behind it instead of a
+    // broken-image icon.
+    &.thumbnail:not([src]),
+    &.thumbnail[src=''] {
+      display: none;
+    }
+  }
+}
+
+.portfolio-info {
+  align-items: center;
+  background: transparent;
+  color: $color-white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  transition: background-color 0.5s ease;
+  width: 100%;
+  z-index: 9;
+  padding: 30px;
+
+  &::before,
+  &::after {
+    border: 2px solid #fff;
+    content: '';
+    height: calc(100% - 40px);
+    left: 20px;
+    position: absolute;
+    top: 20px;
+    transform: scale(0);
+    transition: transform 0.5s ease;
+    width: calc(100% - 40px);
+    z-index: -1;
+  }
+
+  h5 {
+    transform: translateY(-30px);
+    transition: all 0.5s ease;
+    color: $color-white;
+    opacity: 0;
+  }
+
+  span {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s ease;
+    color: $color-white;
+    text-transform: capitalize;
+  }
+
+  @include respond(mobile) {
+    h5,
+    span {
+      font-size: 0.75rem;
+    }
+  }
+}

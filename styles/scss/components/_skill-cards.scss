@@ -1,0 +1,137 @@
+// =============================================================
+// SKILL CARDS (Owl Carousel)
+// =============================================================
+@use '../abstracts' as *;
+
+.owl-item {
+  display: flex;
+  justify-content: center;
+}
+
+.skill-box-inner-single {
+  background-color: $color-white;
+  padding: 20px;
+  border-radius: $radius-md;
+  height: 380px;
+  width: 85%;
+  transition: background-color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
+
+  h4 {
+    color: $color-primary;
+    transition: color $transition-slow;
+  }
+
+  p {
+    color: $color-black;
+    text-align: justify;
+  }
+
+  &:hover {
+    background: $color-primary;
+    transform: scale(0.98);
+    box-shadow: $shadow-soft;
+
+    h4 {
+      color: $color-black;
+    }
+    p {
+      color: $color-white;
+    }
+  }
+
+  @include respond(small-desktop) {
+    height: 388px;
+    width: 26vw;
+    p {
+      font-size: 15px;
+      line-height: 1.4;
+    }
+  }
+
+  @include respond(tablet) {
+    height: 370px;
+    width: 90%;
+    p {
+      font-size: 15px;
+    }
+  }
+
+  @include respond(mobile) {
+    height: 420px;
+    width: 100%;
+  }
+}
+
+// Owl nav arrows previously pointed at two missing PNGs
+// (rightArrow.png / leftArrow.png). Rebuilt as circular
+// Font-Awesome buttons — Font Awesome is already loaded via CDN,
+// so this removes a dependency instead of adding one.
+button.owl-next,
+button.owl-prev {
+  span {
+    @include circle-badge(56px, rgba($color-primary, 0.15));
+    border: 2px solid $color-primary;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color $transition-base, transform $transition-base;
+    font-size: 0;
+
+    &::before {
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: $color-white;
+    }
+
+    &:hover {
+      background-color: $color-primary;
+    }
+  }
+
+  @include respond(tablet-down) {
+    span {
+      width: 50px;
+      height: 50px;
+      top: 95%;
+      transform: translateY(0);
+    }
+  }
+
+  // Narrower container at this range means the default -80px
+  // offset can spill past the viewport edge — pull the arrows in.
+  @include respond(small-desktop) {
+    span {
+      width: 42px;
+      height: 42px;
+    }
+  }
+}
+
+button.owl-next span {
+  right: -80px;
+  &::before {
+    content: '\f054'; // fa-chevron-right
+  }
+
+  @include respond(tablet-down) {
+    right: 50px;
+  }
+  @include respond(small-desktop) {
+    right: -38px;
+  }
+}
+
+button.owl-prev span {
+  left: -80px;
+  &::before {
+    content: '\f053'; // fa-chevron-left
+  }
+
+  @include respond(tablet-down) {
+    left: 50px;
+  }
+  @include respond(small-desktop) {
+    left: -38px;
+  }
+}

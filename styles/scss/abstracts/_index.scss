@@ -1,0 +1,5 @@
+// Barrel file — lets every other partial do a single
+// `@use '../abstracts' as *;` instead of importing
+// variables and mixins separately.
+@forward 'variables';
+@forward 'mixins';

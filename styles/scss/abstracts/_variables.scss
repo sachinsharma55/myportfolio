@@ -1,0 +1,51 @@
+// =============================================================
+// VARIABLES
+// Central design tokens. Change a value here and it ripples
+// through every component that references it.
+// =============================================================
+
+// ---- Brand palette --------------------------------------------------
+$color-black: #000000;
+$color-off-black: #1b1b1b;
+$color-white: #ffffff;
+$color-alice-blue: #f0f8ff;
+
+$color-primary: #9f734e;   // main accent (buttons, progress, borders)
+$color-primary-light: #b68359; // lighter accent (links, hover text)
+$color-primary-dark: #724220;  // dark accent (text on light chips)
+$color-primary-muted: #9c8775; // muted accent (CTA button bg)
+
+$color-gray-100: #cecece; // nav links (default state)
+$color-gray-300: #cccccc; // secondary small text
+$color-gray-500: #585858; // skill icon default
+$color-gray-700: #515151; // progress bar track
+$color-gray-800: #565656; // active pill bg
+
+// ---- Gradients --------------------------------------------------
+$gradient-sticker: linear-gradient(90deg, #e2c6af 4.24%, #b27e52 104.8%);
+$gradient-hero-glow: radial-gradient(circle at 30% 30%, rgba(159, 115, 78, 0.55), rgba(0, 0, 0, 0) 60%),
+  radial-gradient(circle at 70% 70%, rgba(182, 131, 89, 0.35), rgba(0, 0, 0, 0) 55%);
+
+// ---- Typography --------------------------------------------------
+$font-display: 'Josefin Sans', sans-serif; // headings / accents
+$font-body: 'Inter', sans-serif;           // paragraphs / UI copy
+$font-serif: 'Cormorant Garamond', serif;  // editorial pull-quote
+
+// ---- Layout --------------------------------------------------
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 16px;
+$radius-pill: 100px;
+
+$shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.35);
+$shadow-inset-track: 0 4px 4px rgba(0, 0, 0, 0.32) inset;
+
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// ---- Breakpoints (used by the respond() mixin) --------------------
+$bp-mobile-max: 767px;
+$bp-tablet-min: 768px;
+$bp-tablet-max: 1023px;
+$bp-desktop-sm-min: 1024px;
+$bp-desktop-sm-max: 1440px;

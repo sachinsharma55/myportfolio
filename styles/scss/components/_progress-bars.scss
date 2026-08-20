@@ -1,0 +1,44 @@
+// =============================================================
+// SKILL PROGRESS BARS
+// The old file repeated the same ~15-line track block and
+// ~7-line fill block six times over (one per skill). Same
+// visual result, one definition each.
+// =============================================================
+@use '../abstracts' as *;
+
+.html-progress,
+.css-progress,
+.react-progress,
+.bs-progress,
+.js-progress,
+.git-progress {
+  @include progress-track;
+}
+
+.html-progress-value {
+  @include progress-fill(loadhtml);
+}
+.css-progress-value {
+  @include progress-fill(loadcss);
+}
+.react-progress-value {
+  @include progress-fill(loadreact);
+}
+.bs-progress-value {
+  @include progress-fill(loadbs);
+}
+.js-progress-value {
+  @include progress-fill(loadjs);
+}
+.git-progress-value {
+  @include progress-fill(loadgit);
+}
+
+#skillsBars h4 {
+  @include respond(small-desktop) {
+    font-size: 18px;
+  }
+  @include respond(tablet) {
+    font-size: 16px;
+  }
+}

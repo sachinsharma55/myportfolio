@@ -4,17 +4,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sachin Sharma</title>
+    <meta name="description" content="Sachin Sharma — Frontend Developer &amp; Web Designer portfolio.">
+    <title>Sachin Sharma | Frontend Developer</title>
 
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.png">
+    <!-- Favicon: generated monogram placeholder — see images/README.md to swap in a real one -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles/css/main.css">
 
     <!-- Bootstrap CSS -->
     <link href="libraries/bootstrap.min.css" rel="stylesheet">
@@ -25,24 +25,23 @@
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="libraries/owl.carousel.min.css">
     <link rel="stylesheet" href="libraries/owl.theme.default.min.css">
+
+    <!-- Site styles (must load after the libraries above so it can override them) -->
+    <link rel="stylesheet" href="styles/css/main.css">
 </head>
 
 <body>
 
-
-    <!-- <div class="loading-box d-none">
+    <div class="loading-box" aria-hidden="true">
+        <div class="loading-monogram">SS</div>
         <p class="loading-title">Loading</p>
-        <div class="loading-circle">
-            <p class="loading-count"><span id="loadingNumber">0</span>%</p>
-        </div>
-    </div> -->
+    </div>
 
-
-    <header class="text-white bg-black">
+    <header class="text-white bg-black" id="home">
         <!-- nav start -->
-        <nav class="py-3  hide-nv">
+        <nav class="py-3 site-nav">
             <div class="container">
-                <div class="row py-3">
+                <div class="row py-3 hide-nv">
                     <div class="col-12">
                         <div class="row">
                             <div class="col-6">
@@ -51,13 +50,13 @@
                                 </div>
                             </div>
                             <div class="col-6">
-                                <nav class="main-nav">
+                                <nav class="main-nav" aria-label="Primary">
                                     <ul class="d-flex justify-content-between">
-                                        <li><a href="">Home</a></li>
+                                        <li><a href="#home">Home</a></li>
                                         <li><a href="#aboutMe">About</a></li>
-                                        <li><a href="#skillBoxes">Experties</a></li>
+                                        <li><a href="#skillBoxes">Expertise</a></li>
                                         <li><a href="#projects">Projects</a></li>
-                                        <li><a href="#workWithMe">Contacts</a></li>
+                                        <li><a href="#workWithMe">Contact</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -70,9 +69,8 @@
                             </div>
                             <div class="col-3">
                                 <div class="hmbrgr">
-                                    <button class="hamburger-icon" type="button" data-toggle="collapse"
-                                        data-target="#sidebarNav" aria-controls="sidebarNav" aria-expanded="false"
-                                        aria-label="Toggle navigation">
+                                    <button class="hamburger-icon" type="button" aria-controls="sidebarNav"
+                                        aria-expanded="false" aria-label="Toggle navigation">
                                         <span class="bar1"></span>
                                         <span class="bar2"></span>
                                         <span class="bar3"></span>
@@ -83,15 +81,14 @@
                     </div>
                 </div>
 
-                <div class="collapse sidebar" id="sidebarNav" aria-labelledby="hamburgerIcon"
-                    data-parent="#accordionSidebar">
-                    <nav class="main-nav">
+                <div id="sidebarNav" aria-hidden="true">
+                    <nav class="main-nav" aria-label="Mobile">
                         <ul class="d-flex flex-column">
-                            <li><a href="">Home</a></li>
+                            <li><a href="#home">Home</a></li>
                             <li><a href="#aboutMe">About</a></li>
-                            <li><a href="#skillBoxes">Experties</a></li>
-                            <li><a href="#0">Projects</a></li>
-                            <li><a href="#workWithMe">Contacts</a></li>
+                            <li><a href="#skillBoxes">Expertise</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#workWithMe">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -99,115 +96,102 @@
         </nav>
         <!-- nav end -->
 
-
         <div class="container">
 
             <!-- header section Start -->
-
             <div class="row align-items-center">
                 <div class="col-12 col-md-7 col-lg-6 py-md-5">
                     <div class="head-content-about py-5" data-aos="fade-right" data-aos-offset="300"
                         data-aos-easing="ease-in-sine">
-                        <p class="pb-2">Hi I am</p>
+                        <p class="pb-2">Hi, I am</p>
                         <div class="inner-header-content">
-                            <h1><b>Sachin Sharma</b></h1>
-                            <h1>I’m A <span><b class="animatedText"></b></span></h1>
+                            <h1><b>Sachin Sharma</b><br>I'm a <span><b class="animatedText"></b></span></h1>
                             <p>
                                 <b class="text-white">With</b> a keen eye for aesthetics and a passion for user-centered
                                 design, I craft visually captivating and interactive web experiences that transform
                                 brands and engage audiences.
                             </p>
-                            <a class="DownloadCV-btn" download target="_blank" href="sachin052024.pdf"><i
-                                    class="fa-solid fa-download"></i>Download CV</a>
+                            <!--
+                                Point this at whichever resume you want live — both PDFs
+                                from the upload are in /pdf, this defaults to the newer one.
+                            -->
+                            <a class="DownloadCV-btn" download target="_blank" rel="noopener noreferrer"
+                                href="pdf/Sachin_Sharma_CV_Resume_2026.pdf">
+                                <i class="fa-solid fa-download"></i>Download CV
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-12 col-lg-6 col-md-5 mt-5 mt-lg-0 px-0 px-lg-2">
-                    <div class="head-main-image " data-aos="zoom-in">
-                        <!-- <img src="images/sachin.png" alt="mainObj" data-aos="fade-up"> -->
-
-                        <div class="year-sticker">3 years of experince </div>
-                        <div class="post-sticker mb-5">frontend developer</div>
+                    <div class="head-main-image" data-aos="zoom-in">
+                        <div class="head-main-image__frame">
+                            <!-- Add your portrait here: <img src="images/sachin.png" alt="Sachin Sharma"> -->
+                        </div>
+                        <div class="year-sticker">3+ years of experience</div>
+                        <div class="post-sticker mb-5">Frontend Developer</div>
                     </div>
                 </div>
-
             </div>
-
-
-
-
             <!-- HeaderSection End -->
-
         </div>
 
-        <!-- skill-icon-boxesstart -->
-
-        <section class="text-center py-2" style="background-color: #1B1B1B;">
-
-
+        <!-- skill-icon-boxes start -->
+        <section class="text-center py-2" style="background-color: #1B1B1B;" aria-label="Core technologies">
             <div class="container">
                 <div class="row">
-
-                    <div class="col-6 col-md-4 col-lg-2">
-                        <div class="shown-skill-icon " data-aos="fade-right">
-                            <i class="fa-brands fa-css3-alt"></i>
-                        </div>
-                    </div>
-
                     <div class="col-6 col-md-4 col-lg-2">
                         <div class="shown-skill-icon" data-aos="fade-right">
-                            <i class="fa-brands fa-html5"></i>
+                            <i class="fa-brands fa-css3-alt" aria-hidden="true"></i>
+                            <span class="visually-hidden">CSS3</span>
                         </div>
                     </div>
-
-                    <div class="col-6 col-md-4 col-lg-2 sc-pr">
-                        <div class="shown-skill-icon" data-aos="fade-left">
-                            <i class="fa-brands fa-sass"></i>
-                        </div>
-                    </div>
-
-                    
-
-                    <div class="col-6 col-md-4 col-lg-2 sc-pr">
-                        <div class="shown-skill-icon" data-aos="fade-left">
-                            <i class="fa-brands fa-bootstrap"></i>
-                        </div>
-                    </div>
-
-                    <div class="col-6  col-md-4 col-lg-2">
+                    <div class="col-6 col-md-4 col-lg-2">
                         <div class="shown-skill-icon" data-aos="fade-right">
-                            <i class="fa-brands fa-react"></i>
+                            <i class="fa-brands fa-html5" aria-hidden="true"></i>
+                            <span class="visually-hidden">HTML5</span>
                         </div>
                     </div>
-
                     <div class="col-6 col-md-4 col-lg-2 sc-pr">
                         <div class="shown-skill-icon" data-aos="fade-left">
-                            <i class="fa-brands fa-github"></i>
+                            <i class="fa-brands fa-sass" aria-hidden="true"></i>
+                            <span class="visually-hidden">Sass</span>
                         </div>
                     </div>
-
+                    <div class="col-6 col-md-4 col-lg-2 sc-pr">
+                        <div class="shown-skill-icon" data-aos="fade-left">
+                            <i class="fa-brands fa-bootstrap" aria-hidden="true"></i>
+                            <span class="visually-hidden">Bootstrap</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="shown-skill-icon" data-aos="fade-right">
+                            <i class="fa-brands fa-react" aria-hidden="true"></i>
+                            <span class="visually-hidden">React</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 sc-pr">
+                        <div class="shown-skill-icon" data-aos="fade-left">
+                            <i class="fa-brands fa-github" aria-hidden="true"></i>
+                            <span class="visually-hidden">GitHub</span>
+                        </div>
+                    </div>
                 </div>
-
             </div>
         </section>
-
         <!-- skill-icon-boxes end -->
-
     </header>
 
 
-
+    <main>
     <!-- About Section start -->
-
     <section id="aboutMe" class="bg-black text-white py-5">
         <div class="container py-5">
             <div class="row align-items-center flex-column">
 
                 <div class="col-12 col-md-5 col-lg-5">
                     <div class="about-model-img mb-3 mb-md-0" data-aos="fade-up">
-                        <!--<img class="d-none d-md-block" src="images/my-Main.png">-->
-                        <!-- <img class="d-block d-md-none" src="./images/mobileAbout.png"> -->
+                        <!-- Add your photo here: <img src="images/about-photo.png" alt="Sachin Sharma at work"> -->
                     </div>
                 </div>
 
@@ -215,231 +199,203 @@
                     <div class="about-content text-center" data-aos="fade-up">
                         <h1 class="sec-head">About Me</h1>
                         <h5>I'm a Passionate Web Designer</h5>
-                        <p><b style="color: #B68359;font-size: 20px;">O</b>bviously I'm a Web Designer. Web Developer
-                            with over 3 years of experience. Experienced with all stages of the development cycle for
-                            dynamic web projects. The as opposed to using 'Content here, content here', making it look
-                            like readable English</p>
+                        <p><b style="color: #B68359;font-size: 20px;">O</b>bviously I'm a web designer and developer
+                            with over 3 years of experience across the full development cycle for dynamic web
+                            projects — from clean, semantic markup to polished, production-ready interfaces.</p>
 
-                        <p class="mb-5">I'm a professional web designer. My motive is to build a best web design with my
-                            all years of experience.</p>
+                        <p class="mb-5">My focus is building interfaces that feel effortless to use: fast, accessible,
+                            and detailed enough that the craft shows without getting in the user's way.</p>
 
-                        <a href="#projects" class="see-work-btn ">See My Work</a>
-
+                        <a href="#projects" class="see-work-btn">See My Work</a>
                     </div>
                 </div>
-
-
 
             </div>
         </div>
     </section>
-
     <!-- About Section End -->
 
 
-
-    <!-- Experties Content Section Start -->
-
+    <!-- Expertise Content Section Start -->
     <section id="skillBoxes" class="bg-black text-white py-5">
         <div class="container">
             <div class="row">
                 <div class="col-12">
 
                     <div class="headings text-center">
-                        <h1 class="sec-head mb-5 ">Hobbies & Expertise</h1>
+                        <h1 class="sec-head mb-5">Hobbies &amp; Expertise</h1>
                     </div>
 
-
                     <div class="owl-carousel">
-                        <div class="skill-box-inner-single mb-4 mb-md-0 mb-lg-0 text-center ">
-                            <h4>Bootstrap 5&4</h4>
+                        <div class="skill-box-inner-single mb-4 mb-md-0 mb-lg-0 text-center">
+                            <h4>Bootstrap 5&amp;4</h4>
                             <p>Bootstrap 4 and Bootstrap 5 are popular open-source CSS frameworks designed to develop
                                 responsive and mobile-first projects. They offer a comprehensive set of pre-built
-                                components and for creating responsive layouts.</p>
-
+                                components for creating responsive layouts.</p>
                             <p>Bootstrap also provides a suite of JavaScript plugins for adding interactivity and
                                 enhancing user experience.</p>
                         </div>
 
-                        <div class="skill-box-inner-single mb-4 mb-md-0 mb-lg-0 text-center ">
-                            <h4>JS & jQuery</h4>
+                        <div class="skill-box-inner-single mb-4 mb-md-0 mb-lg-0 text-center">
+                            <h4>JS &amp; jQuery</h4>
                             <p>JavaScript and jQuery are scripting languages used to add interactivity and dynamic
                                 behavior to web pages. JavaScript is the more fundamental language, providing a wide
-                                range of functionalities for manipulating the Document Object Model (DOM), handling user
-                                events, and making network requests. jQuery is a popular JavaScript library that
+                                range of functionalities for manipulating the Document Object Model (DOM), handling
+                                user events, and making network requests. jQuery is a popular JavaScript library that
                                 simplifies and streamlines common DOM manipulation tasks, event handling, and
                                 animations.</p>
                         </div>
 
-
-                        <div class="skill-box-inner-single mb-4 mb-md-0 mb-lg-0 text-center ">
-                            <h4>GIThub</h4>
+                        <div class="skill-box-inner-single mb-4 mb-md-0 mb-lg-0 text-center">
+                            <h4>GitHub</h4>
                             <p>GitHub is a web-based hosting service for version control using Git. It is widely used
-                                for software development, documentation, and collaboration. </p>
-
-                            <p> GitHub allows developers to store, manage, and track code changes, as well as
-                                collaborate with others on projects. It provides a central repository for code, allowing
-                                developers to fork and pull changes from others.</p>
+                                for software development, documentation, and collaboration.</p>
+                            <p>GitHub allows developers to store, manage, and track code changes, as well as
+                                collaborate with others on projects. It provides a central repository for code,
+                                allowing developers to fork and pull changes from others.</p>
                         </div>
-
 
                         <div class="skill-box-inner-single mb-4 mb-md-0 mb-lg-0 text-center">
-                            <h4>React & React <br>Native</h4>
-                            <p>React and React Native are JavaScript libraries for building user interfaces (UIs). React
-                                is primarily used for web development, while React Native is designed for mobile app
-                                development. </p>
-
-                            <p>Both libraries employ the component-based approach, breaking down UIs into reusable and
-                                manageable components.</p>
-
+                            <h4>React &amp; React <br>Native</h4>
+                            <p>React and React Native are JavaScript libraries for building user interfaces (UIs).
+                                React is primarily used for web development, while React Native is designed for
+                                mobile app development.</p>
+                            <p>Both libraries employ the component-based approach, breaking down UIs into reusable
+                                and manageable components.</p>
                         </div>
 
-                        <div class="skill-box-inner-single mb-4 mb-md-0 mb-lg-0 text-center ">
-                            <h4>HTML 5&4</h4>
-                            <p>HTML 5 is the latest standard for the HyperText Markup Language (HTML), the foundational
-                                language for creating web pages. It introduces new features that enhance the
-                                accessibility, responsiveness, and interactivity of web content.</p>
-
-                            <p> The Canvas element provides a powerful tool for creating 2D graphics and animations
-                                directly within the browser .HTML 5 is essential for any web developer to master.</p>
+                        <div class="skill-box-inner-single mb-4 mb-md-0 mb-lg-0 text-center">
+                            <h4>HTML 5&amp;4</h4>
+                            <p>HTML 5 is the latest standard for the HyperText Markup Language (HTML), the
+                                foundational language for creating web pages. It introduces new features that enhance
+                                the accessibility, responsiveness, and interactivity of web content.</p>
+                            <p>The Canvas element provides a powerful tool for creating 2D graphics and animations
+                                directly within the browser. HTML 5 is essential for any web developer to master.</p>
                         </div>
 
-                        <div class="skill-box-inner-single mb-4 mb-md-0 mb-lg-0 text-center ">
+                        <div class="skill-box-inner-single mb-4 mb-md-0 mb-lg-0 text-center">
                             <h4>CSS 3</h4>
-                            <p>CSS3 is the latest version of the Cascading Style Sheets (CSS) language, responsible for
-                                styling and presentation of web pages. It offers a wide range of new features that
-                                expand the expressiveness and control over web design. Selectors provide more precise
-                                targeting of specific elements. Properties like transitions, box-shadow, and flexible
-                                box layout enable sophisticated animation effects and responsive layouts. </p>
+                            <p>CSS3 is the latest version of the Cascading Style Sheets (CSS) language, responsible
+                                for styling and presentation of web pages. It offers a wide range of new features
+                                that expand the expressiveness and control over web design. Selectors provide more
+                                precise targeting of specific elements. Properties like transitions, box-shadow, and
+                                flexible box layout enable sophisticated animation effects and responsive layouts.</p>
                         </div>
-
-
                     </div>
 
                 </div>
             </div>
         </div>
     </section>
-
-
-    <!-- Experties Content Section End -->
+    <!-- Expertise Content Section End -->
 
     <!-- skills Section start -->
-
     <section id="skillsBars" class="bg-black text-white py-5">
         <div class="container">
             <div class="row">
 
                 <div class="headings text-center">
-                    <h1 class="sec-head mb-5 ">Skills</h1>
+                    <h1 class="sec-head mb-5">Skills</h1>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-6 ps-lg-5">
                     <div class="html-p" data-aos="fade-up">
-                        <h4>HTML 4 & 5</h4>
-                        <div class="html-progress">
+                        <h4>HTML 4 &amp; 5</h4>
+                        <div class="html-progress" role="progressbar" aria-label="HTML skill level"
+                            aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
                             <div class="html-progress-value"></div>
                         </div>
                     </div>
 
                     <div class="js-p" data-aos="fade-up" data-aos-duration="2500">
-                        <h4>JAVASCRIPT & JQUERY</h4>
-                        <div class="js-progress">
+                        <h4>JAVASCRIPT &amp; JQUERY</h4>
+                        <div class="js-progress" role="progressbar" aria-label="JavaScript &amp; jQuery skill level"
+                            aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
                             <div class="js-progress-value"></div>
                         </div>
                     </div>
 
-                    
-
                     <div class="react-p" data-aos="fade-up" data-aos-duration="2500">
                         <h4>REACT JS</h4>
-                        <div class="react-progress">
+                        <div class="react-progress" role="progressbar" aria-label="React skill level"
+                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                             <div class="react-progress-value"></div>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-6 ps-lg-5">
-                    <div class="css-p " data-aos="fade-up" data-aos-duration="1500">
+                    <div class="css-p" data-aos="fade-up" data-aos-duration="1500">
                         <h4>CSS 3 / SCSS</h4>
-                        <div class="css-progress">
+                        <div class="css-progress" role="progressbar" aria-label="CSS &amp; Sass skill level"
+                            aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
                             <div class="css-progress-value"></div>
                         </div>
                     </div>
                     <div class="BS-p" data-aos="fade-up">
-                        <h4>BOOTSTRAP 4 & 5 / TAILWIND CSS</h4>
-                        <div class="bs-progress">
+                        <h4>BOOTSTRAP 4 &amp; 5 / TAILWIND CSS</h4>
+                        <div class="bs-progress" role="progressbar" aria-label="Bootstrap &amp; Tailwind skill level"
+                            aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
                             <div class="bs-progress-value"></div>
                         </div>
                     </div>
-
                     <div class="git-p" data-aos="fade-up" data-aos-duration="1500">
                         <h4>GITHUB</h4>
-                        <div class="git-progress">
+                        <div class="git-progress" role="progressbar" aria-label="GitHub skill level"
+                            aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
                             <div class="git-progress-value"></div>
                         </div>
                     </div>
-
-                    
-
                 </div>
 
             </div>
         </div>
     </section>
-
     <!-- skills Section End -->
 
-    <!-- Exprnce & Education start-->
+    <!-- Experience & Education start -->
     <section id="eduExperince" class="bg-black text-white py-5">
         <div class="container">
             <div class="row">
 
                 <div class="headings text-center">
-                    <h1 class="sec-head mb-5 ">Experience & Education</h1>
+                    <h1 class="sec-head mb-5">Experience &amp; Education</h1>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-6">
                     <div class="experience-tab-main">
                         <ul>
-
                             <li class="d-flex align-items-center mb-5">
                                 <div class="pe-5">
-                                    <span class="exp-icn"><img src="images/bag.png"></span>
+                                    <span class="exp-icn"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span>
                                     <div class="tabBar-line"></div>
                                 </div>
-
                                 <div>
                                     <span class="designation">Frontend Developer</span>
                                     <span class="compnyExp">- UWS Inc.</span>
-                                    <p class="exp-time m-0">2023 - Current</p>
+                                    <p class="exp-time m-0">2023 - Present</p>
                                 </div>
                             </li>
 
-
                             <li class="d-flex align-items-center mb-5">
                                 <div class="pe-5">
-                                    <span class="exp-icn"><img src="images/bag.png"></span>
+                                    <span class="exp-icn"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span>
                                     <div class="tabBar-line"></div>
                                 </div>
-
                                 <div>
                                     <span class="designation">Jr. Frontend Developer</span>
-                                    <span class="compnyExp">- Sumedha Softech Pvt. Ltd. </span>
+                                    <span class="compnyExp">- Sumedha Softech Pvt. Ltd.</span>
                                     <p class="exp-time m-0">2022 - 2023 (1 year 3 months)</p>
                                 </div>
                             </li>
 
-
                             <li class="d-flex align-items-center mb-5">
                                 <div class="pe-5">
-                                    <span class="exp-icn"><img src="images/bag.png"></span>
+                                    <span class="exp-icn"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span>
                                     <div class="tabBar-line"></div>
                                 </div>
-
                                 <div>
-                                    <span class="designation">Web Designer </span>
+                                    <span class="designation">Web Designer</span>
                                     <span class="compnyExp">- KMV Softwares</span>
                                     <p class="exp-time m-0">2021 - 2022 (1 year 6 months)</p>
                                 </div>
@@ -447,48 +403,37 @@
 
                             <li class="d-flex align-items-center mb-5">
                                 <div class="pe-5">
-                                    <span class="exp-icn"><img src="images/bag.png"></span>
+                                    <span class="exp-icn"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span>
                                 </div>
-
                                 <div>
                                     <span class="designation">Web Design Internship</span>
                                     <span class="compnyExp">- Creative Web Pixels</span>
                                     <p class="exp-time m-0">2020</p>
                                 </div>
                             </li>
-
-
-
-
                         </ul>
                     </div>
                 </div>
 
-
                 <div class="col-12 col-md-6 col-lg-6">
-
                     <div class="experience-tab-main">
                         <ul>
-                            
-
                             <li class="d-flex align-items-center mb-5">
                                 <div class="pe-5">
-                                    <span class="exp-icn"><img src="images/book.png"></span>
+                                    <span class="exp-icn"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
                                     <div class="tabBar-line"></div>
                                 </div>
-
                                 <div>
                                     <span class="designation">MCA</span>
                                     <span class="compnyExp">- Balaji College of Engineering, RTU</span>
-                                    <p class="exp-time m-0">2023 - Running</p>
+                                    <p class="exp-time m-0">2023 - Present</p>
                                 </div>
                             </li>
                             <li class="d-flex align-items-center mb-5">
                                 <div class="pe-5">
-                                    <span class="exp-icn"><img src="images/book.png"></span>
+                                    <span class="exp-icn"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
                                     <div class="tabBar-line"></div>
                                 </div>
-
                                 <div>
                                     <span class="designation">BSc. Mathematics</span>
                                     <span class="compnyExp">- Science College, MLSU</span>
@@ -496,75 +441,64 @@
                                 </div>
                             </li>
 
-
                             <li class="d-flex align-items-center mb-5">
                                 <div class="pe-5">
-                                    <span class="exp-icn"><img src="images/book.png"></span>
+                                    <span class="exp-icn"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
                                     <div class="tabBar-line"></div>
                                 </div>
-
                                 <div>
-                                    <span class="designation">Sr. Secondary Education </span>
+                                    <span class="designation">Sr. Secondary Education</span>
                                     <span class="compnyExp">- MB Science School</span>
                                     <p class="exp-time m-0">2015</p>
                                 </div>
                             </li>
 
-
                             <li class="d-flex align-items-center mb-5">
                                 <div class="pe-5">
-                                    <span class="exp-icn"><img src="images/book.png"></span>
-
+                                    <span class="exp-icn"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
                                 </div>
-
                                 <div>
                                     <span class="designation">Secondary Education</span>
                                     <span class="compnyExp">- Kendriya Vidyalaya</span>
                                     <p class="exp-time m-0">2013</p>
                                 </div>
                             </li>
-
-
-
-
-
                         </ul>
                     </div>
-
                 </div>
-
 
             </div>
         </div>
     </section>
-
-    <!-- Exprnce & Education End-->
+    <!-- Experience & Education End -->
 
     <!-- Project Section Start -->
     <section id="projects" class="bg-black text-white py-5">
         <div class="container">
             <div class="headings text-center">
-                <h1 class="sec-head mb-5 ">Projects</h1>
+                <h1 class="sec-head mb-5">Projects</h1>
             </div>
             <div class="row">
                 <div class="col-md-4 col-6 mb-4">
-                    <div class="portfolio-wrap"> 
-                        <a data-fancybox="portfolio" href="https://www.incrediblerealindia.com/" target="_blank" class="popup">
+                    <div class="portfolio-wrap">
+                        <a href="https://www.incrediblerealindia.com/" target="_blank" rel="noopener noreferrer">
                             <div class="portfolio-img">
-                                <img src="images/projects/realincridibleindia.png" class="thumbnail" alt="" />
+                                <img src="images/projects/realincridibleindia.png" class="thumbnail"
+                                    alt="Real Incredible India project screenshot" />
                             </div>
                             <div class="portfolio-info">
-                                <h5>Real Incridible India</h5>
-                                <span>Raju shared his experience travelling through india</span>
+                                <h5>Real Incredible India</h5>
+                                <span>Raju shared his experience travelling through India</span>
                             </div>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-4 col-6 mb-4">
-                    <div class="portfolio-wrap"> 
-                        <a data-fancybox="portfolio" href="https://dlsengineering.com/" target="_blank" class="popup">
+                    <div class="portfolio-wrap">
+                        <a href="https://dlsengineering.com/" target="_blank" rel="noopener noreferrer">
                             <div class="portfolio-img">
-                                <img src="images/projects/dls-engineers.png" class="thumbnail" alt="" />
+                                <img src="images/projects/dls-engineers.png" class="thumbnail"
+                                    alt="DLS Engineers project screenshot" />
                             </div>
                             <div class="portfolio-info">
                                 <h5>DLS Engineers</h5>
@@ -573,10 +507,11 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-6 mb-4">
-                    <div class="portfolio-wrap"> 
-                        <a data-fancybox="portfolio" href="https://www.homeoptima.com/" target="_blank" class="popup">
+                    <div class="portfolio-wrap">
+                        <a href="https://www.homeoptima.com/" target="_blank" rel="noopener noreferrer">
                             <div class="portfolio-img">
-                                <img src="images/projects/home-optima.png" class="thumbnail" alt="" />
+                                <img src="images/projects/home-optima.png" class="thumbnail"
+                                    alt="Home Optima project screenshot" />
                             </div>
                             <div class="portfolio-info">
                                 <h5>Home Optima</h5>
@@ -586,10 +521,11 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-6 mb-4">
-                    <div class="portfolio-wrap"> 
-                        <a data-fancybox="portfolio" href="https://boatflex.com/" target="_blank"  class="popup">
+                    <div class="portfolio-wrap">
+                        <a href="https://boatflex.com/" target="_blank" rel="noopener noreferrer">
                             <div class="portfolio-img">
-                                <img src="images/projects/boatflex.png" class="thumbnail" alt="" />
+                                <img src="images/projects/boatflex.png" class="thumbnail"
+                                    alt="BoatFlex project screenshot" />
                             </div>
                             <div class="portfolio-info">
                                 <h5>BoatFlex</h5>
@@ -599,10 +535,11 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-6 mb-4">
-                    <div class="portfolio-wrap"> 
-                        <a data-fancybox="portfolio" href="https://carconnect.com.au/" target="_blank"  class="popup">
+                    <div class="portfolio-wrap">
+                        <a href="https://carconnect.com.au/" target="_blank" rel="noopener noreferrer">
                             <div class="portfolio-img">
-                                <img src="images/projects/car-connect.png" class="thumbnail" alt="" />
+                                <img src="images/projects/car-connect.png" class="thumbnail"
+                                    alt="Car Connect project screenshot" />
                             </div>
                             <div class="portfolio-info">
                                 <h5>Car Connect</h5>
@@ -612,10 +549,11 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-6 mb-4">
-                    <div class="portfolio-wrap"> 
-                        <a data-fancybox="portfolio" href="https://www.outbuster.com/" target="_blank"  class="popup">
+                    <div class="portfolio-wrap">
+                        <a href="https://www.outbuster.com/" target="_blank" rel="noopener noreferrer">
                             <div class="portfolio-img">
-                                <img src="images/projects/outbusters.png" class="thumbnail" alt="" />
+                                <img src="images/projects/outbusters.png" class="thumbnail"
+                                    alt="Outbusters project screenshot" />
                             </div>
                             <div class="portfolio-info">
                                 <h5>Outbusters</h5>
@@ -625,10 +563,11 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-6 mb-4">
-                    <div class="portfolio-wrap"> 
-                        <a data-fancybox="portfolio" href="https://zenegy.com/" target="_blank"  class="popup">
+                    <div class="portfolio-wrap">
+                        <a href="https://zenegy.com/" target="_blank" rel="noopener noreferrer">
                             <div class="portfolio-img">
-                                <img src="images/projects/zenegy.png" class="thumbnail" alt="" />
+                                <img src="images/projects/zenegy.png" class="thumbnail"
+                                    alt="Zenegy project screenshot" />
                             </div>
                             <div class="portfolio-info">
                                 <h5>Zenegy</h5>
@@ -638,159 +577,156 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-6 mb-4">
-                    <div class="portfolio-wrap"> 
-                        <a data-fancybox="portfolio" href="https://www.rexlondon.com/" target="_blank"  class="popup">
+                    <div class="portfolio-wrap">
+                        <a href="https://www.rexlondon.com/" target="_blank" rel="noopener noreferrer">
                             <div class="portfolio-img">
-                                <img src="images/projects/rex.png" class="thumbnail" alt="" />
+                                <img src="images/projects/rex.png" class="thumbnail"
+                                    alt="Rex London project screenshot" />
                             </div>
                             <div class="portfolio-info">
-                                <h5>Zenegy</h5>
-                                <span>A Online Gift Store</span>
+                                <h5>Rex London</h5>
+                                <span>An Online Gift Store</span>
                             </div>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-4 col-6 mb-4">
-                    <div class="portfolio-wrap"> 
-                        <a data-fancybox="portfolio" href="https://saniona.com/" target="_blank"  class="popup">
+                    <div class="portfolio-wrap">
+                        <a href="https://saniona.com/" target="_blank" rel="noopener noreferrer">
                             <div class="portfolio-img">
-                                <img src="images/projects/saniona.png" class="thumbnail" alt="" />
+                                <img src="images/projects/saniona.png" class="thumbnail"
+                                    alt="Saniona project screenshot" />
                             </div>
                             <div class="portfolio-info">
                                 <h5>Saniona</h5>
-                                <span>A Scientific innovative team</span>
+                                <span>A Scientific Innovative Team</span>
                             </div>
                         </a>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
     </section>
     <!-- Project Section End -->
 
 
-    <!-- Work togather Section start -->
-
+    <!-- Work together Section start -->
     <section id="workWithMe" class="text-white bg-black pt-5 pb-3">
         <div class="container-fluid pb-5">
             <div class="row">
 
                 <div class="col-12 col-md-6 col-lg-6">
-                    <div class="work_with_img">
-
-                    </div>
+                    <!-- Placeholder illustration — swap in real artwork/photo if you'd like -->
+                    <div class="work_with_img"></div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-6 py-5 pt-md-0 ">
+                <div class="col-12 col-md-6 col-lg-6 py-5 pt-md-0">
                     <div class="let_work_form">
                         <div class="workWM">
                             <div class="headings text-left">
-                                <h1 class="sec-head mb-5 mb-md-4">Let's Work Together !</h1>
+                                <h1 class="sec-head mb-5 mb-md-4">Let's Work Together!</h1>
                             </div>
 
-                            <form>
+                            <!-- TODO: this form doesn't send anywhere yet — wire it up to a
+                                 backend or a form service (Formspree, Web3Forms, etc.) via
+                                 the `action` attribute below before going live. -->
+                            <form action="" method="post">
                                 <div class="d-flex">
-                                    <input type="text" class="w-100 me-3" name="firstName" placeholder="First Name">
-                                    <input type="text" class="w-100" name="lastName" placeholder="Last Name">
+                                    <input type="text" class="w-100 me-3" name="firstName" id="firstName"
+                                        placeholder="First Name" aria-label="First name" autocomplete="given-name"
+                                        required>
+                                    <input type="text" class="w-100" name="lastName" id="lastName"
+                                        placeholder="Last Name" aria-label="Last name" autocomplete="family-name"
+                                        required>
                                 </div>
 
-                                <input type="number" class="w-100" placeholder="Enter Your Mobile Number"
-                                    title="Only can enter number">
-                                <input type="email" class="w-100" placeholder="Enter Your Mail Here">
-                                <textarea name="send message" class="w-100" placeholder="Enter Your Message Here...."
-                                    cols="30" rows="5"></textarea>
+                                <input type="tel" class="w-100" name="mobile" id="mobile"
+                                    placeholder="Enter Your Mobile Number" aria-label="Mobile number"
+                                    autocomplete="tel" pattern="[0-9+ ]{7,15}" title="Numbers only, 7–15 digits">
+                                <input type="email" class="w-100" name="email" id="email"
+                                    placeholder="Enter Your Mail Here" aria-label="Email address"
+                                    autocomplete="email" required>
+                                <textarea name="message" id="message" class="w-100"
+                                    placeholder="Enter Your Message Here...." aria-label="Message" cols="30" rows="5"
+                                    required></textarea>
 
-                                <button class="frm-sbmit-btn float-end ">Submit</button>
-
+                                <button type="submit" class="frm-sbmit-btn float-end">Submit</button>
                             </form>
-
                         </div>
                     </div>
                 </div>
 
-
             </div>
         </div>
     </section>
-
-
-    <!-- Work togather Section end -->
+    <!-- Work together Section end -->
+    </main>
 
 
     <!-- Footer Start -->
     <footer id="myFooter" class="position-relative bg-black text-white py-5">
-        <div class=" container">
+        <div class="container">
             <div class="row">
                 <div class="social-footer d-flex">
-                    <a href="#0" class="footer-social s-fb "><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#0" class="footer-social s-ig"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#0" class="footer-social s-tw"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#0" class="footer-social s-li"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <!-- Point these at your real profiles -->
+                    <a href="#0" class="footer-social s-fb" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#0" class="footer-social s-ig" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#0" class="footer-social s-tw" aria-label="Twitter / X"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#0" class="footer-social s-li" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
                 </div>
-
 
                 <div class="col-12">
                     <div class="footer-qutoe text-center mt-5">
-                        <h3>``Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry``</h3>
+                        <h3>&ldquo;I believe great interfaces should feel effortless — every pixel, animation,
+                            and interaction crafted with intention.&rdquo;</h3>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-4 col-lg-3 offset-lg-1 mt-5">
                     <div class="footer-number footer-add">
                         <div class="footer-ad-icn">
-                            <i class="fa-solid fa-phone"></i>
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i>
                         </div>
                         <div class="footer-add-cont">
-                            <p class="mb-0">+91 9929327755</p>
+                            <p class="mb-0"><a href="tel:+919929327755" class="text-white text-decoration-none">+91 9929327755</a></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-12 offset-md-1 col-md-7 col-lg-6 offset-lg-2 mt-5">
-
                     <div class="footer-address footer-add">
                         <div class="footer-ad-icn">
-                            <i class="fa-solid fa-location-dot"></i>
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                         </div>
                         <div class="footer-add-cont">
-                            <p class="mb-0">My Haveli Apartments, Ajmer road, Jaipur</p>
+                            <p class="mb-0">My Haveli Apartments, Ajmer Road, Jaipur</p>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="col-12 mt-5">
-                    <div class="footer-nav">
+                    <nav class="footer-nav" aria-label="Footer">
                         <ul class="d-lg-flex d-md-flex justify-content-md-between justify-content-evenly w-100 m-0">
-                            <li class="active"><a href="#0">Home</a></li>
-                            <li class=" "><a href="#0">About</a></li>
-                            <li class=""><a href="#0">Experties</a></li>
-                            <li class=""><a href="#0">projects</a></li>
-                            <li class=""><a href="#0">contact</a></li>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#aboutMe">About</a></li>
+                            <li><a href="#skillBoxes">Expertise</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#workWithMe">Contact</a></li>
                         </ul>
-                    </div>
+                    </nav>
                 </div>
-
-
 
             </div>
         </div>
     </footer>
     <!-- Footer End -->
 
-<!-- Scripts -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="js/jquery.min.js"></script>
-<script src="libraries/owl.carousel.min.js"></script>
-<script src="js/script.js"></script>
-<script src="libraries/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="libraries/owl.carousel.min.js"></script>
+    <script src="libraries/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 </html>

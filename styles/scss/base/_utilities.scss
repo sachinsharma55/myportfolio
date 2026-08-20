@@ -1,0 +1,10 @@
+// =============================================================
+// UTILITY CLASSES
+// =============================================================
+@use '../abstracts' as *;
+
+// Keeps text available to screen readers without showing it
+// visually — used next to icon-only elements (skill icons, etc.).
+.visually-hidden {
+  @include visually-hidden;
+}

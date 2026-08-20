@@ -1,0 +1,63 @@
+// =============================================================
+// BASE ELEMENT STYLES
+// =============================================================
+@use '../abstracts' as *;
+
+body {
+  background-color: $color-black;
+  color: $color-white;
+  font-family: $font-body;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-display;
+}
+
+p {
+  font-family: $font-body;
+}
+
+// A visible, on-brand focus ring for keyboard users instead of
+// the browser default (or worse, no outline at all).
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid $color-primary-light;
+  outline-offset: 3px;
+}
+
+::selection {
+  background: $color-primary;
+  color: $color-white;
+}
+
+// Slim on-brand scrollbar (progressive enhancement — Webkit/Blink only).
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: $color-off-black;
+}
+::-webkit-scrollbar-thumb {
+  background: $color-primary;
+  border-radius: $radius-pill;
+}
+
+input {
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
